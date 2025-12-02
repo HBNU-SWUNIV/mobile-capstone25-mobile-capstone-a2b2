@@ -287,4 +287,4 @@ CREATE TABLE IF NOT EXISTS alarms (
                                       created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
                                       fired       BOOLEAN NOT NULL DEFAULT FALSE
 );
-WHERE id = 5;
+
