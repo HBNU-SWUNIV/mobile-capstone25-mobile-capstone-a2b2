@@ -279,9 +279,12 @@ CREATE TABLE solution (
                           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-select *
-from solution;
-
-delete
-from solution
+CREATE TABLE IF NOT EXISTS alarms (
+                                      id          SERIAL PRIMARY KEY,
+                                      session_id  TEXT NOT NULL,
+                                      message     TEXT,
+                                      scheduled_at TIMESTAMPTZ NOT NULL,
+                                      created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                      fired       BOOLEAN NOT NULL DEFAULT FALSE
+);
 WHERE id = 5;
